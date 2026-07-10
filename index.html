@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TrailEye AI reviews trail-camera photos and videos locally on your Windows PC, identifying wildlife, people and vehicles without sending your archive to the cloud.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#101712">
+  <link rel="canonical" href="https://traileyeai.com/">
+  <meta property="og:title" content="TrailEye AI — Find what moved. Skip what didn’t.">
+  <meta property="og:description" content="Private, local AI analysis for trail-camera photos and videos.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://traileyeai.com/">
+  <meta property="og:image" content="https://traileyeai.com/assets/01-hero-ai-detection.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>TrailEye AI — Local trail-camera analysis</title>
+  <link rel="icon" href="assets/traileye-logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="signal-bar" role="status">
+    <span class="signal-dot" aria-hidden="true"></span>
+    <span>Windows desktop app</span>
+    <span class="signal-separator" aria-hidden="true">/</span>
+    <span>Local AI processing</span>
+    <span class="signal-separator" aria-hidden="true">/</span>
+    <span>One-time licences</span>
+  </div>
+
+  <header class="site-header" data-header>
+    <div class="nav-shell">
+      <a class="brand" href="#top" aria-label="TrailEye AI home">
+        <img src="assets/traileye-logo.png" alt="" width="44" height="44">
+        <span class="brand-copy">
+          <strong>TrailEye <em>AI</em></strong>
+          <small>Trail-camera intelligence</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
+        <span></span><span></span><span></span>
+        <span class="sr-only">Open navigation</span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation" data-nav>
+        <a href="#how-it-works">How it works</a>
+        <a href="#product">Product</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#pricing">Pricing</a>
+        <a class="nav-cta" href="https://github.com/atmolab1/traileyeai-website/releases/download/v1.0.0/TrailEyeAI-Setup-1.0.0.exe" download>Download free</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-contours" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span>Private AI for the field</span></p>
+          <h1>Find what moved.<br><i>Skip what didn’t.</i></h1>
+          <p class="hero-lede">TrailEye AI reviews every photo and video from your trail cameras, identifies wildlife, people and vehicles, and turns a folder full of footage into a searchable field record.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/atmolab1/traileyeai-website/releases/download/v1.0.0/TrailEyeAI-Setup-1.0.0.exe" download>
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 3h8v8H3V3Zm10 0h8v8h-8V3ZM3 13h8v8H3v-8Zm10 0h8v8h-8v-8Z"/></svg>
+              Download for Windows
+            </a>
+            <a class="button button-quiet" href="#product">See the real app <span aria-hidden="true">↓</span></a>
+          </div>
+          <p class="hero-note">Start free — full AI recognition included. No credit card.</p>
+
+          <dl class="hero-facts" aria-label="Product facts">
+            <div><dt>38</dt><dd>wildlife species</dd></div>
+            <div><dt>100%</dt><dd>local by default</dd></div>
+            <div><dt>Photo + video</dt><dd>one workflow</dd></div>
+          </dl>
+        </div>
+
+        <div class="hero-product reveal" data-delay="120">
+          <div class="product-frame">
+            <div class="frame-bar" aria-hidden="true">
+              <div class="frame-title"><img src="assets/traileye-logo.png" alt=""> TrailEye AI</div>
+              <div class="window-controls"><span></span><span></span><span></span></div>
+            </div>
+            <button class="product-shot" type="button" data-lightbox="assets/01-hero-ai-detection.png" aria-label="Open full TrailEye AI screenshot">
+              <img src="assets/01-hero-ai-detection.png" alt="TrailEye AI showing a Wild Boar detection in a night trail-camera image" width="1380" height="860">
+            </button>
+            <div class="scan-line" aria-hidden="true"></div>
+          </div>
+          <div class="field-tag field-tag-local">
+            <span class="tag-pulse" aria-hidden="true"></span>
+            <strong>Processed on this PC</strong>
+            <small>No archive upload</small>
+          </div>
+          <div class="field-tag field-tag-detection">
+            <span class="animal-mark" aria-hidden="true"></span>
+            <strong>Wild Boar · 82%</strong>
+            <small>Species identified</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="container utility-strip reveal" data-delay="180">
+        <span>Built for</span>
+        <ul>
+          <li>Hunters</li>
+          <li>Wildlife managers</li>
+          <li>Researchers</li>
+          <li>Landowners</li>
+          <li>Security monitoring</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="problem-section section">
+      <div class="container problem-grid">
+        <div class="section-heading reveal">
+          <p class="kicker">The footage bottleneck</p>
+          <h2>Your camera already did the waiting.<br>You shouldn’t have to.</h2>
+        </div>
+        <div class="problem-copy reveal" data-delay="100">
+          <p>Memory cards fill up with empty frames, wind movement and long night sequences. Manually opening every file means hours spent looking for the few moments that matter.</p>
+          <p class="problem-answer"><strong>TrailEye AI handles the first pass.</strong> You review detected events, correct anything uncertain, then filter, map and export the result.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="workflow section" id="how-it-works">
+      <div class="container">
+        <div class="section-intro reveal">
+          <p class="kicker">From memory card to evidence</p>
+          <h2>One folder. Three steps.<br>A season you can search.</h2>
+          <p>No import ritual and no command line. Select your camera folder and let TrailEye build the record in the background.</p>
+        </div>
+
+        <ol class="workflow-list">
+          <li class="workflow-step reveal">
+            <div class="step-index">01</div>
+            <div class="step-visual folder-visual" aria-hidden="true">
+              <div class="folder-back"></div>
+              <div class="folder-files"><span></span><span></span><span></span></div>
+              <div class="folder-front"></div>
+            </div>
+            <div class="step-copy">
+              <h3>Select the camera folder</h3>
+              <p>Analyze photos, videos or both. Professional can scan complete folder trees for multi-camera archives.</p>
+            </div>
+          </li>
+          <li class="workflow-step reveal" data-delay="80">
+            <div class="step-index">02</div>
+            <div class="step-visual scan-visual" aria-hidden="true">
+              <div class="scan-card"><span class="scan-box"></span><span class="scan-beam"></span></div>
+              <div class="scan-label">LOCAL AI</div>
+            </div>
+            <div class="step-copy">
+              <h3>Let local AI find the events</h3>
+              <p>TrailEye detects animals, people and vehicles, refines wildlife species and reads camera timestamps.</p>
+            </div>
+          </li>
+          <li class="workflow-step reveal" data-delay="160">
+            <div class="step-index">03</div>
+            <div class="step-visual review-visual" aria-hidden="true">
+              <div class="review-row"><span></span><b>Wild boar</b><i>✓</i></div>
+              <div class="review-row"><span></span><b>Deer</b><i>✓</i></div>
+              <div class="review-row"><span></span><b>Person</b><i>✓</i></div>
+            </div>
+            <div class="step-copy">
+              <h3>Review, understand, export</h3>
+              <p>Confirm with keyboard shortcuts, inspect activity patterns and deliver CSV, Excel, images or PDF reports.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="showcase section" id="product">
+      <div class="container">
+        <div class="showcase-heading reveal">
+          <div>
+            <p class="kicker">The real application</p>
+            <h2>Not another cloud gallery.<br>A working field desk.</h2>
+          </div>
+          <p>Every screen below is captured from TrailEye AI v1.0. Explore the workflow you’ll use on your own footage.</p>
+        </div>
+
+        <div class="product-tabs reveal" data-product-tabs>
+          <div class="tab-rail" role="tablist" aria-label="TrailEye AI product features">
+            <button role="tab" aria-selected="true" aria-controls="panel-detect" id="tab-detect" tabindex="0" data-tab="detect">
+              <span>01</span><strong>AI detection</strong><small>See every relevant event</small>
+            </button>
+            <button role="tab" aria-selected="false" aria-controls="panel-review" id="tab-review" tabindex="-1" data-tab="review">
+              <span>02</span><strong>Rapid review</strong><small>Confirm with one keypress</small>
+            </button>
+            <button role="tab" aria-selected="false" aria-controls="panel-insights" id="tab-insights" tabindex="-1" data-tab="insights">
+              <span>03</span><strong>Activity insights</strong><small>Understand timing and patterns</small>
+            </button>
+            <button role="tab" aria-selected="false" aria-controls="panel-map" id="tab-map" tabindex="-1" data-tab="map">
+              <span>04</span><strong>Camera map</strong><small>Connect events to place</small>
+            </button>
+          </div>
+
+          <div class="tab-panels">
+            <article class="tab-panel is-active" id="panel-detect" role="tabpanel" aria-labelledby="tab-detect" data-panel="detect">
+              <div class="panel-media">
+                <button type="button" data-lightbox="assets/01-hero-ai-detection.png" aria-label="Open AI detection screenshot">
+                  <img src="assets/01-hero-ai-detection.png" alt="TrailEye AI detection browser with timeline, filters, image and detection details" loading="lazy">
+                </button>
+              </div>
+              <div class="panel-copy">
+                <p class="panel-number">01 / Detect</p>
+                <h3>The event, its time and its context—together.</h3>
+                <p>Browse detections beside the original image, confidence, timestamp and a zoomable event timeline. Mark results correct, false or relabel them without losing the source file.</p>
+                <ul class="check-list">
+                  <li>Animals, people and vehicles</li>
+                  <li>38-species wildlife refinement</li>
+                  <li>OCR, EXIF and file-time fallback</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="tab-panel" id="panel-review" role="tabpanel" aria-labelledby="tab-review" data-panel="review" hidden>
+              <div class="panel-media portrait-media">
+                <button type="button" data-lightbox="assets/02-one-click-review.png" aria-label="Open Rapid Review screenshot">
+                  <img src="assets/02-one-click-review.png" alt="Rapid Review view with confirm, reject, relabel and delete keyboard actions" loading="lazy">
+                </button>
+              </div>
+              <div class="panel-copy">
+                <p class="panel-number">02 / Review</p>
+                <h3>Move through detections at field speed.</h3>
+                <p>Rapid Review puts one event at a time in focus. Confirm, reject, relabel, delete and move on using clear controls or keyboard shortcuts.</p>
+                <ul class="check-list">
+                  <li>Large, distraction-free image</li>
+                  <li>One-key confirm and reject</li>
+                  <li>Corrections preserved for your archive</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="tab-panel" id="panel-insights" role="tabpanel" aria-labelledby="tab-insights" data-panel="insights" hidden>
+              <div class="panel-media portrait-media">
+                <button type="button" data-lightbox="assets/03-activity-insights.png" aria-label="Open activity insights screenshot">
+                  <img src="assets/03-activity-insights.png" alt="Statistics dashboard with species, hourly activity, heatmap, moon and sun period charts" loading="lazy">
+                </button>
+              </div>
+              <div class="panel-copy">
+                <p class="panel-number">03 / Understand</p>
+                <h3>See when the forest becomes active.</h3>
+                <p>Move past individual images to patterns: detections by species, hour and day, activity heatmaps, moon phase, sunrise, sunset and sun period.</p>
+                <ul class="check-list">
+                  <li>Hourly and daily activity</li>
+                  <li>Night/day and moon context</li>
+                  <li>Duplicate and rare-animal signals</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="tab-panel" id="panel-map" role="tabpanel" aria-labelledby="tab-map" data-panel="map" hidden>
+              <div class="panel-media">
+                <button type="button" data-lightbox="assets/04-camera-site-map.png" aria-label="Open camera map screenshot">
+                  <img src="assets/04-camera-site-map.png" alt="Topographic camera-site map with location, species and date filters" loading="lazy">
+                </button>
+              </div>
+              <div class="panel-copy">
+                <p class="panel-number">04 / Map</p>
+                <h3>Know what appeared—and where.</h3>
+                <p>Place each camera on a topographic map manually or from photo GPS. Filter sites by species and date to connect observations with terrain.</p>
+                <ul class="check-list">
+                  <li>Camera-site locations</li>
+                  <li>Photo GPS auto-location</li>
+                  <li>Species and date filtering</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="privacy section" id="privacy">
+      <div class="privacy-noise" aria-hidden="true"></div>
+      <div class="container privacy-grid">
+        <div class="privacy-visual reveal">
+          <div class="local-core">
+            <div class="core-rings"><span></span><span></span><span></span></div>
+            <img src="assets/traileye-logo.png" alt="TrailEye AI" width="160" height="160">
+            <div class="core-label"><span></span> LOCAL PROCESSING</div>
+          </div>
+          <div class="privacy-path privacy-path-in"><span>camera folder</span><i></i></div>
+          <div class="privacy-path privacy-path-out"><i></i><span>results</span></div>
+          <div class="blocked-cloud" aria-label="No mandatory cloud upload">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M19 48h29a11 11 0 0 0 2-21.8A17 17 0 0 0 17.2 23 13 13 0 0 0 19 48Z"/><path d="m14 14 36 36"/></svg>
+            <span>No required cloud upload</span>
+          </div>
+        </div>
+        <div class="privacy-copy reveal" data-delay="100">
+          <p class="kicker">Your cameras. Your computer. Your archive.</p>
+          <h2>Local by default.<br>Private by design.</h2>
+          <p>Trail-camera footage can reveal wildlife locations, people, vehicles and private land. TrailEye’s standard detection pipeline runs on your Windows PC, so your image and video archive does not need to leave the machine.</p>
+          <div class="privacy-points">
+            <div><strong>Works offline</strong><span>Local detection and archive tools stay on your computer.</span></div>
+            <div><strong>GPU acceleration</strong><span>DirectML uses compatible Windows graphics hardware when available.</span></div>
+            <div><strong>Cloud is optional</strong><span>Text-prompt search is an opt-in backend that requires your own API key.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="capabilities section">
+      <div class="container capability-grid">
+        <div class="capability-lead reveal">
+          <p class="kicker">Built for the whole archive</p>
+          <h2>Detection is only the first pass.</h2>
+          <p>TrailEye keeps the surrounding workflow in one desktop application—from timestamp recovery to a report you can hand over.</p>
+          <button class="text-action" type="button" data-lightbox="assets/05-species-library.png">View species library screenshot <span aria-hidden="true">↗</span></button>
+        </div>
+        <div class="capability-list reveal" data-delay="100">
+          <article><span>01</span><h3>Timeline & bursts</h3><p>Cluster motion bursts, zoom through events and open the original file from context.</p></article>
+          <article><span>02</span><h3>Species filters</h3><p>Narrow the archive to individual wildlife species, people, vehicles or tagged events.</p></article>
+          <article><span>03</span><h3>Day, night & duplicates</h3><p>Classify light period, group repeated triggers and focus on interesting events.</p></article>
+          <article><span>04</span><h3>Reports & exports</h3><p>Export CSV, Excel, shown or annotated images, and complete PDF reports.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing section" id="pricing">
+      <div class="container">
+        <div class="pricing-heading reveal">
+          <div>
+            <p class="kicker">Pay once. Use forever.</p>
+            <h2>Start with the archive you have.</h2>
+          </div>
+          <p>Every edition includes AI detection and all core analysis tools. Choose by the amount of footage and number of camera locations you need to process.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card reveal">
+            <div class="price-card-head"><p>Free</p><span>Try the complete workflow</span></div>
+            <div class="price"><strong>€0</strong><small>forever</small></div>
+            <ul>
+              <li><b>20 files</b> per analysis</li>
+              <li>One folder</li>
+              <li>AI detection + 38 species</li>
+              <li>Timeline, map, stats & export</li>
+            </ul>
+            <a class="button button-outline" href="https://github.com/atmolab1/traileyeai-website/releases/download/v1.0.0/TrailEyeAI-Setup-1.0.0.exe" download>Download free</a>
+          </article>
+
+          <article class="price-card price-featured reveal" data-delay="80">
+            <div class="price-flag">Best for one active camera</div>
+            <div class="price-card-head"><p>Explorer</p><span>Focused, high-volume review</span></div>
+            <div class="price"><strong>€49</strong><small>one-time</small></div>
+            <ul>
+              <li><b>1,000 files</b> per analysis</li>
+              <li>One folder</li>
+              <li>All core AI and analysis tools</li>
+              <li>Licence for 1 computer</li>
+            </ul>
+            <a class="button button-primary" href="https://wildtech.lemonsqueezy.com/checkout/buy/256104e4-6ba8-476d-a560-7faf5e77a50c" target="_blank" rel="noopener">Buy Explorer <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="price-card reveal" data-delay="160">
+            <div class="price-card-head"><p>Professional</p><span>Multi-camera operations</span></div>
+            <div class="price"><strong>€299</strong><small>one-time</small></div>
+            <ul>
+              <li><b>Unlimited files</b> per analysis</li>
+              <li>Folder trees & subfolders</li>
+              <li>All core AI and analysis tools</li>
+              <li>Licence for 3 computers</li>
+            </ul>
+            <a class="button button-outline" href="https://wildtech.lemonsqueezy.com/checkout/buy/8cb2b684-4c57-4271-8abd-49ceaac2d7d9" target="_blank" rel="noopener">Buy Professional <span aria-hidden="true">↗</span></a>
+          </article>
+        </div>
+        <p class="pricing-note reveal">Secure checkout by Lemon Squeezy. Taxes may be calculated at checkout. Explorer and Professional are one-time purchases—no subscription.</p>
+      </div>
+    </section>
+
+    <section class="faq section" id="faq">
+      <div class="container faq-grid">
+        <div class="faq-heading reveal">
+          <p class="kicker">Before your first scan</p>
+          <h2>Questions from the field.</h2>
+          <p>TrailEye AI is a Windows desktop application. Your files remain in their existing folders while the app builds a local, searchable record.</p>
+        </div>
+        <div class="accordion reveal" data-delay="100">
+          <details>
+            <summary>Does TrailEye upload my photos or videos?<span></span></summary>
+            <p>Not for the standard local detection pipeline. Animal, person, vehicle and species detection run on your PC. The separate custom text-prompt cloud search is optional, requires your own provider API key and clearly indicates that it sends images to that provider.</p>
+          </details>
+          <details>
+            <summary>Can it analyze video as well as photos?<span></span></summary>
+            <p>Yes. TrailEye can analyze both trail-camera images and videos in the same folder workflow.</p>
+          </details>
+          <details>
+            <summary>What can the AI recognize?<span></span></summary>
+            <p>The local pipeline detects animals, people and vehicles, then refines animal detections into a library of 38 wildlife species where possible.</p>
+          </details>
+          <details>
+            <summary>What happens if the timestamp is burned into the image?<span></span></summary>
+            <p>TrailEye can read timestamp overlays with OCR. It also uses EXIF metadata and file time as fallbacks, with a confidence value shown in the event details.</p>
+          </details>
+          <details>
+            <summary>Is a subscription required?<span></span></summary>
+            <p>No. Free is permanent. Explorer and Professional are one-time purchases, activated with a licence key.</p>
+          </details>
+          <details>
+            <summary>Which edition should I choose?<span></span></summary>
+            <p>Use Free to test up to 20 files per analysis. Explorer is designed for one camera folder and up to 1,000 files per run. Professional removes file limits and includes subfolder scanning for complete multi-camera archives.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-section">
+      <div class="closing-contours" aria-hidden="true"></div>
+      <div class="container closing-grid">
+        <div class="reveal">
+          <img src="assets/traileye-logo.png" alt="" width="72" height="72">
+          <p class="kicker">The useful frame is already in there.</p>
+          <h2>Let TrailEye find it.</h2>
+        </div>
+        <div class="closing-actions reveal" data-delay="100">
+          <a class="button button-primary button-large" href="https://github.com/atmolab1/traileyeai-website/releases/download/v1.0.0/TrailEyeAI-Setup-1.0.0.exe" download>Download TrailEye AI for Windows</a>
+          <p>Free edition · Full AI recognition · No credit card</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <a class="brand footer-brand" href="#top" aria-label="TrailEye AI home">
+        <img src="assets/traileye-logo.png" alt="" width="40" height="40">
+        <span class="brand-copy"><strong>TrailEye <em>AI</em></strong><small>See more. Search less.</small></span>
+      </a>
+      <div class="footer-links">
+        <a href="#how-it-works">How it works</a>
+        <a href="#product">Product</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+      <p class="footer-meta">TrailEye AI v1.0 · Windows desktop application<br>© <span data-year></span> TrailEye AI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" data-lightbox-dialog aria-label="Product screenshot">
+    <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close screenshot">×</button>
+    <img alt="Expanded TrailEye AI product screenshot" data-lightbox-image>
+  </dialog>
+
+  <div class="toast" role="status" aria-live="polite" data-toast>Download starting…</div>
+</body>
+</html>
