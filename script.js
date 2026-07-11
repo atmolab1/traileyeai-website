@@ -130,6 +130,15 @@
     });
   });
 
+  document.querySelectorAll('.lemonsqueezy-button').forEach((checkoutLink) => {
+    checkoutLink.addEventListener('click', (event) => {
+      if (!window.LemonSqueezy?.Url?.Open) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.LemonSqueezy.Url.Open(checkoutLink.href);
+    });
+  });
+
   const accordionItems = [...document.querySelectorAll('.accordion details')];
   accordionItems.forEach((item) => {
     item.addEventListener('toggle', () => {
