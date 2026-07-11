@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://traileyeai.com/sitemap.xml
+Sitemap: https://traileye.eu/sitemap.xml
