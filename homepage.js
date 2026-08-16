@@ -131,7 +131,7 @@ if(footer && !document.querySelector('#contact')){
   const contact=document.createElement('section');
   contact.id='contact';
   contact.className='section-tight';
-  contact.innerHTML='<div class="container"><div class="final-cta reveal visible"><div class="final-copy"><span class="kicker">Contact TrailEye</span><h2>Questions, support or licensing?</h2><p>Contact us directly at <strong>provreme@gmail.com</strong>.</p><div class="actions"><a class="btn btn-primary" href="mailto:provreme@gmail.com?subject=TrailEye%20AI%20enquiry">Open email app</a><button class="btn btn-secondary" type="button" data-copy-email>Copy email</button></div><p data-copy-status style="margin-top:14px;font-size:13px"></p></div></div></div>';
+  contact.innerHTML='<div class="container"><div class="final-cta reveal visible"><div class="final-copy"><span class="kicker">Contact TrailEye</span><h2>Questions, support or licensing?</h2><p>Contact us directly at <strong>latsyman@gmail.com</strong>.</p><div class="actions"><a class="btn btn-primary" href="mailto:latsyman@gmail.com?subject=TrailEye%20AI%20enquiry">Open email app</a><button class="btn btn-secondary" type="button" data-copy-email>Copy email</button></div><p data-copy-status style="margin-top:14px;font-size:13px"></p></div></div></div>';
   footer.parentNode.insertBefore(contact,footer);
 }
 if(contactLink){
@@ -143,10 +143,10 @@ if(copyEmailButton){
   copyEmailButton.addEventListener('click',async()=>{
     const status=document.querySelector('[data-copy-status]');
     try{
-      await navigator.clipboard.writeText('provreme@gmail.com');
-      if(status) status.textContent='Email copied: provreme@gmail.com';
+      await navigator.clipboard.writeText('latsyman@gmail.com');
+      if(status) status.textContent='Email copied: latsyman@gmail.com';
     }catch{
-      if(status) status.textContent='Email: provreme@gmail.com';
+      if(status) status.textContent='Email: latsyman@gmail.com';
     }
   });
 }
