@@ -59,23 +59,30 @@ if(insights){
   }
 }
 
-// Connect paid plans to Lemon Squeezy checkout instead of email links.
-const checkoutUrl='https://wildtech.lemonsqueezy.com/checkout';
+// Embedded Lemon Squeezy checkout: customer remains on TrailEye page.
+const checkoutUrls={
+  Explorer:'https://wildtech.lemonsqueezy.com/checkout/buy/256104e4-6ba8-476d-a560-7faf5e77a50c?embed=1',
+  Professional:'https://wildtech.lemonsqueezy.com/checkout/buy/8cb2b684-4c57-4271-8abd-49ceaac2d7d9?embed=1'
+};
+
 document.querySelectorAll('#pricing .price-card').forEach(card=>{
   const title=card.querySelector('h3')?.textContent.trim();
   const button=card.querySelector('a.btn');
-  if(!button) return;
-  if(title==='Explorer'){
-    button.href=checkoutUrl;
-    button.textContent='Buy Explorer';
-    button.removeAttribute('download');
-  }
-  if(title==='Professional'){
-    button.href=checkoutUrl;
-    button.textContent='Buy Professional';
-    button.removeAttribute('download');
-  }
+  const checkout=checkoutUrls[title];
+  if(!button || !checkout) return;
+  button.href=checkout;
+  button.classList.add('lemonsqueezy-button');
+  button.removeAttribute('download');
+  button.textContent=title==='Explorer' ? 'Buy Explorer' : 'Buy Professional';
 });
+
+if(!document.querySelector('script[data-lemonjs]')){
+  const lemonScript=document.createElement('script');
+  lemonScript.src='https://assets.lemonsqueezy.com/lemon.js';
+  lemonScript.defer=true;
+  lemonScript.dataset.lemonjs='true';
+  document.head.appendChild(lemonScript);
+}
 
 const io=new IntersectionObserver(entries=>entries.forEach(e=>{
   if(e.isIntersecting){
