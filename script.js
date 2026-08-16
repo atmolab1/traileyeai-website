@@ -151,4 +151,18 @@
 
   const yearTarget = document.querySelector('[data-year]');
   if (yearTarget) yearTarget.textContent = String(new Date().getFullYear());
+
+  const multilingualPaths = [
+    'trail-camera-photo-sorting-software',
+    'offline-trail-camera-software',
+    'camera-trap-software-for-researchers',
+    'trail-camera-software-for-hunters',
+    'best-ai-trail-camera-software'
+  ];
+  if (multilingualPaths.some((part) => location.pathname.includes(part))) {
+    const languageScript = document.createElement('script');
+    languageScript.src = '/subpage-languages.js?v=1';
+    languageScript.defer = true;
+    document.body.appendChild(languageScript);
+  }
 })();
