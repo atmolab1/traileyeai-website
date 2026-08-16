@@ -1,6 +1,17 @@
 const toggle=document.querySelector('[data-menu-toggle]');
 const nav=document.querySelector('[data-nav]');
 
+// Search-focused page metadata.
+document.title='AI Trail Camera Software & Wildlife Photo Sorter | TrailEye AI';
+const metaDescription=document.querySelector('meta[name="description"]');
+if(metaDescription){
+  metaDescription.setAttribute('content','TrailEye AI is Windows trail camera software for AI photo and video sorting, wildlife species detection, people and vehicle detection, activity heatmaps, camera-site maps and optional cloud AI searches.');
+}
+const ogTitle=document.querySelector('meta[property="og:title"]');
+if(ogTitle) ogTitle.setAttribute('content','AI Trail Camera Software & Wildlife Photo Sorter | TrailEye AI');
+const ogDescription=document.querySelector('meta[property="og:description"]');
+if(ogDescription) ogDescription.setAttribute('content','Analyze trail-camera photos and videos with local AI, species recognition, filtered activity heatmaps, camera maps and optional cloud AI searches.');
+
 if(toggle&&nav){
   const huntersLink=nav.querySelector('a[href="trail-camera-software-for-hunters/"]');
   if(huntersLink) huntersLink.remove();
@@ -16,7 +27,7 @@ if(toggle&&nav){
 // Make optional cloud AI/custom-description search visible in the hero.
 const heroText=document.querySelector('.hero-content > p');
 if(heroText){
-  heroText.textContent='TrailEye AI detects animals, people and vehicles, identifies supported wildlife species, recovers timestamps and turns thousands of photos and videos into timelines, heatmaps, statistics, maps and exportable reports. For more flexible searches, optional cloud AI can also analyze your media for virtually anything you describe in natural language.';
+  heroText.textContent='TrailEye AI is AI trail camera software for Windows that detects animals, people and vehicles, identifies supported wildlife species, recovers timestamps and turns thousands of photos and videos into timelines, heatmaps, statistics, maps and exportable reports. Optional cloud AI can also analyze your media for virtually anything you describe in natural language.';
 }
 
 const trustRow=document.querySelector('.trust-row');
@@ -57,6 +68,35 @@ if(insights){
       bullets.innerHTML='<div class="bullet">Heatmaps filtered by selected wildlife species</div><div class="bullet">Separate activity views for people and vehicles</div><div class="bullet">Hourly and daily activity summaries for the current selection</div><div class="bullet">Species counts and filtered timelines</div><div class="bullet">Sun-period and available moon context for deeper field interpretation</div>';
     }
   }
+}
+
+// Add an SEO-focused, useful explainer with strong internal links.
+const pricingSection=document.querySelector('#pricing');
+if(pricingSection && !document.querySelector('#trail-camera-software')){
+  const seoSection=document.createElement('section');
+  seoSection.id='trail-camera-software';
+  seoSection.className='section';
+  seoSection.innerHTML='<div class="container"><div class="section-heading reveal visible"><span class="kicker">AI trail camera software</span><h2>From thousands of trail-camera files to searchable wildlife activity.</h2><p>TrailEye AI is designed for people who need more than a simple photo sorter. It combines local trail-camera detection, species recognition, reviewable results, timestamp recovery, activity heatmaps, camera-site mapping and export tools in one Windows workflow.</p></div><div class="audiences"><article class="audience reveal visible"><h3>AI trail camera photo & video sorting</h3><p>Analyze ordinary camera folders and quickly surface animal, person and vehicle events instead of opening every file manually.</p><a class="kicker" href="trail-camera-photo-sorting-software/">Trail camera photo sorting software →</a></article><article class="audience reveal visible"><h3>Offline, privacy-first analysis</h3><p>Standard detection runs locally on your Windows PC. Your normal workflow does not require uploading your entire trail-camera archive to a cloud service.</p><a class="kicker" href="offline-trail-camera-software/">Offline trail camera software →</a></article><article class="audience reveal visible"><h3>Camera-trap research workflows</h3><p>Use reviewable AI, species filters, timestamps, heatmaps, camera sites and exports for larger field-camera datasets.</p><a class="kicker" href="camera-trap-software-for-researchers/">Camera trap software for researchers →</a></article></div></div>';
+  pricingSection.parentNode.insertBefore(seoSection,pricingSection);
+}
+
+// Add FAQ structured data for search engines.
+if(!document.querySelector('script[data-seo-faq]')){
+  const faq=document.createElement('script');
+  faq.type='application/ld+json';
+  faq.dataset.seoFaq='true';
+  faq.textContent=JSON.stringify({
+    '@context':'https://schema.org',
+    '@type':'FAQPage',
+    mainEntity:[
+      {'@type':'Question',name:'What is TrailEye AI?',acceptedAnswer:{'@type':'Answer',text:'TrailEye AI is Windows trail camera software that analyzes photos and videos, detects animals, people and vehicles, identifies supported wildlife species and turns detections into searchable timelines, activity heatmaps, maps and reports.'}},
+      {'@type':'Question',name:'Does TrailEye AI work offline?',acceptedAnswer:{'@type':'Answer',text:'The standard detection workflow runs locally on the Windows PC. Optional features such as cloud AI searches or online map services may require internet access.'}},
+      {'@type':'Question',name:'Can TrailEye show activity heatmaps for one species?',acceptedAnswer:{'@type':'Answer',text:'Yes. Activity heatmaps and statistics can be filtered to a selected wildlife species, animals, people or vehicles so different types of activity can be analyzed separately.'}},
+      {'@type':'Question',name:'Can TrailEye detect something outside its built-in wildlife classes?',acceptedAnswer:{'@type':'Answer',text:'Yes. Optional cloud AI can search media using a natural-language description, allowing flexible searches for visual details beyond the built-in wildlife classes.'}},
+      {'@type':'Question',name:'Can TrailEye analyze both photos and videos?',acceptedAnswer:{'@type':'Answer',text:'Yes. TrailEye is designed to analyze mixed trail-camera archives containing photos and supported short videos.'}}
+    ]
+  });
+  document.head.appendChild(faq);
 }
 
 // Embedded Lemon Squeezy checkout: customer remains on TrailEye page.
