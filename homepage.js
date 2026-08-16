@@ -49,18 +49,12 @@ const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecti
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
 
 // Load multilingual UI after all dynamic homepage content has been created.
-const languageScript=document.createElement('script');languageScript.src='languages.js?v=2';
+const languageScript=document.createElement('script');languageScript.src='languages.js?v=3';
 languageScript.onload=()=>{
   const lang=new URLSearchParams(location.search).get('lang')||localStorage.getItem('traileye-lang')||'en';
   const h1=document.querySelector('.hero-content h1');
-  if(!h1)return;
-  const headlines={
-    de:'Verwandle Wildkamera-Ordner in <span>verwertbare Wildtierdaten.</span>',
-    sl:'Spremenite mape lovskih kamer v <span>uporabne podatke o živalih.</span>',
-    es:'Convierte carpetas de cámaras trampa en <span>información útil sobre fauna.</span>',
-    ru:'Превратите папки фотоловушек в <span>полезные данные о дикой природе.</span>',
-    zh:'将野外相机文件夹转化为<span>可用的野生动物信息。</span>'
-  };
-  if(headlines[lang])h1.innerHTML=headlines[lang];
+  const headlines={de:'Verwandle Wildkamera-Ordner in <span>verwertbare Wildtierdaten.</span>',sl:'Spremenite mape lovskih kamer v <span>uporabne podatke o živalih.</span>',es:'Convierte carpetas de cámaras trampa en <span>información útil sobre fauna.</span>',ru:'Превратите папки фотоловушек в <span>полезные данные о дикой природе.</span>',zh:'将野外相机文件夹转化为<span>可用的野生动物信息。</span>'};
+  if(h1&&headlines[lang])h1.innerHTML=headlines[lang];
+  const extra=document.createElement('script');extra.src='languages-extra.js?v=1';document.body.appendChild(extra);
 };
 document.body.appendChild(languageScript);
