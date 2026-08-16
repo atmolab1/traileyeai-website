@@ -84,6 +84,33 @@ if(!document.querySelector('script[data-lemonjs]')){
   document.head.appendChild(lemonScript);
 }
 
+// Reliable on-page Contact section. Mailto remains optional, but the email is always visible/copyable.
+const footer=document.querySelector('.site-footer');
+const contactLink=[...document.querySelectorAll('a')].find(a=>a.textContent.trim()==='Contact');
+if(footer && !document.querySelector('#contact')){
+  const contact=document.createElement('section');
+  contact.id='contact';
+  contact.className='section-tight';
+  contact.innerHTML='<div class="container"><div class="final-cta reveal visible"><div class="final-copy"><span class="kicker">Contact TrailEye</span><h2>Questions, support or licensing?</h2><p>Contact us directly at <strong>info@traileye.eu</strong>.</p><div class="actions"><a class="btn btn-primary" href="mailto:info@traileye.eu?subject=TrailEye%20AI%20enquiry">Open email app</a><button class="btn btn-secondary" type="button" data-copy-email>Copy email</button></div><p data-copy-status style="margin-top:14px;font-size:13px"></p></div></div></div>';
+  footer.parentNode.insertBefore(contact,footer);
+}
+if(contactLink){
+  contactLink.href='#contact';
+  contactLink.removeAttribute('target');
+}
+const copyEmailButton=document.querySelector('[data-copy-email]');
+if(copyEmailButton){
+  copyEmailButton.addEventListener('click',async()=>{
+    const status=document.querySelector('[data-copy-status]');
+    try{
+      await navigator.clipboard.writeText('info@traileye.eu');
+      if(status) status.textContent='Email copied: info@traileye.eu';
+    }catch{
+      if(status) status.textContent='Email: info@traileye.eu';
+    }
+  });
+}
+
 const io=new IntersectionObserver(entries=>entries.forEach(e=>{
   if(e.isIntersecting){
     e.target.classList.add('visible');
