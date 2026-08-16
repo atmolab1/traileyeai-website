@@ -1,52 +1,92 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="TrailEye AI is trail camera photo analysis software for Windows. Sort photos and videos, detect wildlife, identify species, read timestamps and build local reports." />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-    <meta name="theme-color" content="#132019" />
-    <link rel="canonical" href="https://traileye.eu/" />
-    <link rel="icon" href="assets/traileye-logo.png" />
-    <meta property="og:title" content="TrailEye AI — Trail Camera Photo Analysis Software" />
-    <meta property="og:description" content="Sort trail-camera photos and videos with private, local AI on your Windows PC." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://traileye.eu/" />
-    <meta property="og:image" content="https://traileye.eu/assets/01-hero-ai-detection.png" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <title>TrailEye AI – Trail Camera Photo Analysis Software</title>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "TrailEye AI",
-      "url": "https://traileye.eu/",
-      "image": "https://traileye.eu/assets/01-hero-ai-detection.png",
-      "description": "Trail camera photo and video analysis software for Windows with local wildlife, person and vehicle detection, species identification, timestamp OCR, maps and reports.",
-      "applicationCategory": "MultimediaApplication",
-      "operatingSystem": "Windows 10, Windows 11",
-      "softwareVersion": "1.0.0",
-      "downloadUrl": "https://github.com/atmolab1/traileyeai-website/releases/download/v1.0.0/TrailEyeAI-Setup-1.0.0.exe",
-      "featureList": [
-        "Local trail-camera photo and video analysis",
-        "Animal, person and vehicle detection",
-        "38-species wildlife identification",
-        "Timestamp OCR",
-        "Activity timeline and statistics",
-        "Camera-site map",
-        "CSV, Excel, image and PDF exports"
-      ],
-      "offers": [
-        {"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"},
-        {"@type": "Offer", "name": "Explorer", "price": "49", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"},
-        {"@type": "Offer", "name": "Professional", "price": "299", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}
-      ]
-    }
-    </script>
-    <script type="module" crossorigin src="./assets/index-DJXDR4GI.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BWPbrhLr.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="TrailEye AI is Windows trail-camera analysis software with local wildlife detection, 38-species recognition, timestamp OCR, activity statistics, heatmaps, camera-site maps and export tools.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#07110d">
+  <link rel="canonical" href="https://traileye.eu/">
+  <link rel="icon" href="assets/traileye-logo.png">
+  <meta property="og:title" content="TrailEye AI — See more. Search less.">
+  <meta property="og:description" content="Turn trail-camera folders into searchable wildlife detections, timelines, heatmaps, statistics, maps and reports — locally on Windows.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://traileye.eu/">
+  <meta property="og:image" content="https://traileye.eu/assets/hero-deer-detection.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>TrailEye AI — Wildlife Detection, Heatmaps & Trail Camera Analytics</title>
+  <link rel="stylesheet" href="homepage.css">
+  <script src="homepage.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"TrailEye AI",
+    "url":"https://traileye.eu/",
+    "description":"Windows trail-camera photo and video analysis software with local wildlife, person and vehicle detection, 38-species recognition, timestamp OCR, statistics, heatmaps, camera-site maps and exports.",
+    "applicationCategory":"MultimediaApplication",
+    "operatingSystem":"Windows 10, Windows 11",
+    "softwareVersion":"1.0.0",
+    "downloadUrl":"https://github.com/atmolab1/traileyeai-website/releases/download/v1.0.0/TrailEyeAI-Setup-1.0.0.exe",
+    "featureList":[
+      "Local photo and video analysis",
+      "Animal person and vehicle detection",
+      "38-species wildlife identification",
+      "Timestamp OCR",
+      "Activity timeline",
+      "Hourly and daily statistics",
+      "Activity heatmaps",
+      "Sun and moon context",
+      "Camera-site map",
+      "Classification correction and relabeling",
+      "CSV Excel image and PDF exports"
+    ],
+    "offers":[
+      {"@type":"Offer","name":"Free","price":"0","priceCurrency":"EUR"},
+      {"@type":"Offer","name":"Explorer","price":"49","priceCurrency":"EUR"},
+      {"@type":"Offer","name":"Professional","price":"299","priceCurrency":"EUR"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top"><img src="assets/traileye-logo.png" alt=""><span>TrailEye <em>AI</em></span></a>
+      <button class="menu-toggle" data-menu-toggle aria-expanded="false" aria-label="Open navigation">Menu</button>
+      <nav class="nav-links" data-nav>
+        <a href="#features">Features</a>
+        <a href="#insights">Heatmaps & stats</a>
+        <a href="#map">Maps</a>
+        <a href="#workflow">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="trail-camera-software-for-hunters/">For hunters</a>
+        <a class="nav-cta" href="https://github.com/atmolab1/traileyeai-website/releases/download/v1.0.0/TrailEyeAI-Setup-1.0.0.exe" download>Download free</a>
+      </nav>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-bg"><img src="assets/hero-deer-detection.webp" alt="Red deer with AI detection overlay in a forest at sunrise"></div>
+      <div class="container">
+        <div class="hero-content">
+          <span class="pill">Local AI · Windows desktop · No mandatory cloud</span>
+          <h1>Turn trail-camera folders into <span>wildlife intelligence.</span></h1>
+          <p>TrailEye AI detects animals, people and vehicles, identifies supported wildlife species, recovers timestamps and turns thousands of photos and videos into timelines, heatmaps, statistics, maps and exportable reports.</p>
+          <div class="actions"><a class="btn btn-primary" href="https://github.com/atmolab1/traileyeai-website/releases/download/v1.0.0/TrailEyeAI-Setup-1.0.0.exe" download>Download TrailEye Free</a><a class="btn btn-secondary" href="#insights">Explore the analytics</a></div>
+          <div class="trust-row"><span>Local-first processing</span><span>Photos + videos</span><span>38-species library</span><span>Free edition stays free</span></div>
+        </div>
+      </div>
+    </section>
+    <div class="stats-strip"><div class="container"><div class="stats-grid"><div class="stat"><strong>38</strong><span>supported wildlife species</span></div><div class="stat"><strong>3</strong><span>core event classes: animal, person, vehicle</span></div><div class="stat"><strong>4+</strong><span>export formats incl. CSV, Excel & PDF</span></div><div class="stat"><strong>100%</strong><span>standard detection runs locally</span></div></div></div></div>
+    <section class="section" id="features"><div class="container"><div class="section-heading reveal"><span class="kicker">Real TrailEye capabilities</span><h2>Much more than automatic animal sorting.</h2><p>The redesigned homepage reflects the actual Windows software: reviewable AI detections, time and location context, activity analytics and field-ready exports.</p></div><div class="feature-grid"><article class="feature-card reveal"><div class="feature-icon">AI</div><h3>Animal, person & vehicle detection</h3><p>Automatically surface likely events before detailed review so empty or irrelevant frames do not consume your time.</p></article><article class="feature-card reveal"><div class="feature-icon">38</div><h3>Species identification</h3><p>Refine animal detections with TrailEye's 38-species prediction library, then confirm, reject or relabel the result.</p></article><article class="feature-card reveal"><div class="feature-icon">OCR</div><h3>Timestamp recovery</h3><p>Read burned-in trail-camera date/time overlays with OCR, with EXIF and file timestamps available as fallback context.</p></article><article class="feature-card reveal"><div class="feature-icon">▦</div><h3>Smart review timeline</h3><p>Keep original media, detection confidence, predicted species, timestamp and event context together in one workflow.</p></article><article class="feature-card reveal"><div class="feature-icon">▥</div><h3>Photos and short videos</h3><p>Analyze mixed seasonal archives from ordinary folders instead of separating still images and video clips into different tools.</p></article><article class="feature-card reveal"><div class="feature-icon">⇩</div><h3>Reports & portable data</h3><p>Export CSV, Excel, selected images and PDF reports for hunters, landowners, researchers, clubs or management records.</p></article></div></div></section>
+    <section class="section insight-wrap" id="insights"><div class="container"><div class="section-heading reveal"><span class="kicker">Activity analytics</span><h2>See when wildlife is actually appearing.</h2><p>TrailEye converts reviewed detections into visual activity patterns so you can move from a folder full of media to an evidence-based view of species activity.</p></div><div class="product-showcase"><div class="shot reveal"><img src="assets/03-activity-insights.png" alt="TrailEye activity dashboard with counts, hourly statistics and heatmaps"></div><div class="copy reveal"><span class="kicker">Heatmaps + statistics</span><h3>Find peaks, patterns and quiet periods.</h3><p>Explore observations by species, hour and day instead of manually counting sightings in spreadsheets.</p><div class="bullet-list"><div class="bullet">Hourly and daily activity summaries</div><div class="bullet">Activity heatmaps for fast pattern recognition</div><div class="bullet">Species counts and filtered views</div><div class="bullet">Sun-period context for dawn, daylight, dusk and night</div><div class="bullet">Available moon context for deeper field interpretation</div></div></div></div><div class="product-showcase reverse" id="map"><div class="shot reveal"><img src="assets/04-camera-site-map.png" alt="TrailEye camera-site map"></div><div class="copy reveal"><span class="kicker">Place matters</span><h3>Connect detections to camera sites.</h3><p>View manually placed camera sites or use photo GPS where available, then compare activity by location rather than treating every camera folder as one anonymous archive.</p><div class="bullet-list"><div class="bullet">Camera-site mapping and site filters</div><div class="bullet">Manual site placement or available photo GPS</div><div class="bullet">Useful for multi-camera hunting areas and research projects</div><div class="bullet">Map views complement — not replace — field knowledge</div></div></div></div><div class="product-showcase"><div class="shot reveal"><img src="assets/02-one-click-review.png" alt="TrailEye review interface"></div><div class="copy reveal"><span class="kicker">Human-in-the-loop AI</span><h3>Review the prediction instead of blindly trusting it.</h3><p>Camera-trap conditions vary by species, season, distance, illumination and camera model. TrailEye keeps AI classifications reviewable so you can confirm, reject or correct uncertain results.</p><div class="bullet-list"><div class="bullet">Inspect detection confidence and media context</div><div class="bullet">Confirm or correct species predictions</div><div class="bullet">Keep questionable records out of downstream analysis</div><div class="bullet">Designed for responsible field use and research validation</div></div></div></div></div></section>
+    <section class="section" id="gallery"><div class="container"><div class="section-heading reveal"><span class="kicker">Wildlife detection</span><h2>Built for the species people actually track.</h2><p>From European forests to North American hunting ground, TrailEye's workflow is designed around real trail-camera archives and supported wildlife recognition.</p></div><div class="gallery-grid"><article class="gallery-card reveal"><img src="assets/wildlife-deer.webp" alt="Deer wildlife detection"><div class="gallery-label"><strong>Deer</strong><span>AI wildlife detection</span></div></article><article class="gallery-card reveal"><img src="assets/wildlife-wolf.webp" alt="Wolf wildlife detection"><div class="gallery-label"><strong>Wolf</strong><span>Species recognition</span></div></article><article class="gallery-card reveal"><img src="assets/wildlife-bear.webp" alt="Bear wildlife detection"><div class="gallery-label"><strong>Bear</strong><span>Field-camera analysis</span></div></article><article class="gallery-card reveal"><img src="assets/01-hero-ai-detection.png" alt="TrailEye detection interface"><div class="gallery-label"><strong>Detection context</strong><span>Confidence + time + event</span></div></article><article class="gallery-card reveal"><img src="assets/05-species-library.png" alt="TrailEye species library"><div class="gallery-label"><strong>Species library</strong><span>38 supported wildlife species</span></div></article></div></div></section>
+    <section class="section-tight" id="workflow"><div class="container"><div class="section-heading reveal"><span class="kicker">Simple field workflow</span><h2>From SD card to useful pattern.</h2></div><div class="workflow"><article class="step reveal"><h3>Import your camera folder</h3><p>Point TrailEye at copied trail-camera photos, videos or a seasonal folder tree, depending on your edition.</p></article><article class="step reveal"><h3>Let local AI do the first pass</h3><p>Detect events, predict supported species and recover time context while your archive remains under your control.</p></article><article class="step reveal"><h3>Review, analyze and export</h3><p>Correct classifications, filter by species or camera site, inspect heatmaps and statistics, then export the results you need.</p></article></div></div></section>
+    <section class="section"><div class="container"><div class="section-heading reveal"><span class="kicker">Who TrailEye is for</span><h2>One workflow, three very different jobs.</h2></div><div class="audiences"><article class="audience reveal"><h3>Hunters & land managers</h3><p>Review seasonal cameras faster, compare activity by time and location and share selected findings without uploading private land imagery to a mandatory cloud service.</p><a href="trail-camera-software-for-hunters/" class="kicker">Explore hunter workflow →</a></article><article class="audience reveal"><h3>Wildlife researchers</h3><p>Triage field-camera datasets, retain human validation, recover timestamps and export reviewed results into downstream research workflows.</p><a href="camera-trap-software-for-researchers/" class="kicker">Explore research workflow →</a></article><article class="audience reveal"><h3>Nature observers</h3><p>Turn thousands of backyard, forest or reserve camera files into searchable sightings, species timelines and meaningful activity patterns.</p><a href="#pricing" class="kicker">Start with Free →</a></article></div></div></section>
+    <section class="section insight-wrap" id="pricing"><div class="container"><div class="section-heading reveal"><span class="kicker">Simple licensing</span><h2>Test it free. Pay once when your archive grows.</h2><p>No invented SaaS plans: these are the editions currently documented for TrailEye AI.</p></div><div class="pricing"><article class="price-card reveal"><span class="badge">Permanent free edition</span><h3>Free</h3><div class="price">€0 <small>forever</small></div><ul><li>Full AI recognition workflow</li><li>Up to 20 files per analysis</li><li>Best for compatibility testing</li><li>No credit card required</li></ul><a class="btn btn-primary" href="https://github.com/atmolab1/traileyeai-website/releases/download/v1.0.0/TrailEyeAI-Setup-1.0.0.exe" download>Download Free</a></article><article class="price-card featured reveal"><span class="badge">For active camera users</span><h3>Explorer</h3><div class="price">€49 <small>one-time licence</small></div><ul><li>Up to 1,000 files per analysis</li><li>One folder per run</li><li>Designed for an individual active camera</li><li>No recurring subscription</li></ul><a class="btn btn-secondary" href="mailto:info@traileye.eu?subject=TrailEye%20Explorer">Get Explorer</a></article><article class="price-card reveal"><span class="badge">Multi-camera projects</span><h3>Professional</h3><div class="price">€299 <small>one-time licence</small></div><ul><li>Unlimited files</li><li>Subfolder / folder-tree scanning</li><li>For multiple cameras and sites</li><li>Three computer activations</li></ul><a class="btn btn-secondary" href="mailto:info@traileye.eu?subject=TrailEye%20Professional">Get Professional</a></article></div></div></section>
+    <section class="section"><div class="container"><div class="final-cta reveal"><img src="assets/wildlife-wolf.webp" alt="Wolf in forest"><div class="final-copy"><span class="kicker">See more. Search less.</span><h2>Start with the camera folder you already have.</h2><p>Download the permanent Free edition for Windows and test TrailEye on your own photos and videos before choosing a paid licence.</p><div class="actions"><a class="btn btn-primary" href="https://github.com/atmolab1/traileyeai-website/releases/download/v1.0.0/TrailEyeAI-Setup-1.0.0.exe" download>Download TrailEye Free</a><a class="btn btn-secondary" href="offline-trail-camera-software/">How local processing works</a></div></div></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="#top"><img src="assets/traileye-logo.png" alt=""><span>TrailEye <em>AI</em></span></a><p>Local-first trail-camera intelligence for hunters, researchers and nature lovers.</p></div><div><h4>Product</h4><a href="#features">Features</a><a href="#insights">Heatmaps & statistics</a><a href="#map">Camera maps</a><a href="#pricing">Pricing</a></div><div><h4>Workflows</h4><a href="trail-camera-software-for-hunters/">Hunters</a><a href="camera-trap-software-for-researchers/">Researchers</a><a href="trail-camera-photo-sorting-software/">Photo sorting</a><a href="offline-trail-camera-software/">Offline use</a></div><div><h4>Get TrailEye</h4><a href="https://github.com/atmolab1/traileyeai-website/releases/download/v1.0.0/TrailEyeAI-Setup-1.0.0.exe">Download Free</a><a href="mailto:info@traileye.eu">Contact</a></div></div><div class="legal">© <span data-year></span> TrailEye AI · Windows desktop application · Built for local trail-camera analysis.</div></div></footer>
+</body>
 </html>
