@@ -163,6 +163,12 @@
     const languageScript = document.createElement('script');
     languageScript.src = '/subpage-languages.js?v=2';
     languageScript.defer = true;
+    languageScript.onload = () => {
+      const fullTextScript = document.createElement('script');
+      fullTextScript.src = '/subpage-fulltext.js?v=1';
+      fullTextScript.defer = true;
+      document.body.appendChild(fullTextScript);
+    };
     document.body.appendChild(languageScript);
   }
 })();
