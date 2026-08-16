@@ -24,4 +24,23 @@
       if(value&&value.includes('38'))el.setAttribute(attr,replace38(value));
     });
   });
+
+  // Add GPU support to the compact capability row below the hero.
+  const trustRow=document.querySelector('.trust-row');
+  if(trustRow&&!trustRow.querySelector('[data-gpu-supported]')){
+    const params=new URLSearchParams(location.search);
+    const lang=params.get('lang')||localStorage.getItem('traileye-lang')||'en';
+    const labels={
+      en:'GPU SUPPORTED',
+      de:'GPU-UNTERSTÜTZUNG',
+      sl:'PODPORA ZA GPU',
+      es:'COMPATIBLE CON GPU',
+      ru:'ПОДДЕРЖКА GPU',
+      zh:'支持 GPU'
+    };
+    const item=document.createElement('span');
+    item.dataset.gpuSupported='true';
+    item.textContent=labels[lang]||labels.en;
+    trustRow.appendChild(item);
+  }
 })();
