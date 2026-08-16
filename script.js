@@ -164,10 +164,9 @@
     languageScript.src = '/subpage-languages.js?v=2';
     languageScript.defer = true;
     languageScript.onload = () => {
-      const fullTextScript = document.createElement('script');
-      fullTextScript.src = '/subpage-fulltext.js?v=1';
-      fullTextScript.defer = true;
-      document.body.appendChild(fullTextScript);
+      const countScript = document.createElement('script');
+      countScript.src = '/species-count.js?v=1';
+      document.body.appendChild(countScript);
     };
     document.body.appendChild(languageScript);
   }
