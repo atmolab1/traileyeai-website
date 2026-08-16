@@ -31,11 +31,11 @@
     const params=new URLSearchParams(location.search);
     const lang=params.get('lang')||localStorage.getItem('traileye-lang')||'en';
     const labels={
-      en:'GPU SUPPORTED',
-      de:'GPU-UNTERSTÜTZUNG',
-      sl:'PODPORA ZA GPU',
-      es:'COMPATIBLE CON GPU',
-      ru:'ПОДДЕРЖКА GPU',
+      en:'GPU supported',
+      de:'GPU-Unterstützung',
+      sl:'Podpora za GPU',
+      es:'Compatible con GPU',
+      ru:'Поддержка GPU',
       zh:'支持 GPU'
     };
     const item=document.createElement('span');
