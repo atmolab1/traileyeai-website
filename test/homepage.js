@@ -59,6 +59,24 @@ if(insights){
   }
 }
 
+// Connect paid plans to Lemon Squeezy checkout instead of email links.
+const checkoutUrl='https://wildtech.lemonsqueezy.com/checkout';
+document.querySelectorAll('#pricing .price-card').forEach(card=>{
+  const title=card.querySelector('h3')?.textContent.trim();
+  const button=card.querySelector('a.btn');
+  if(!button) return;
+  if(title==='Explorer'){
+    button.href=checkoutUrl;
+    button.textContent='Buy Explorer';
+    button.removeAttribute('download');
+  }
+  if(title==='Professional'){
+    button.href=checkoutUrl;
+    button.textContent='Buy Professional';
+    button.removeAttribute('download');
+  }
+});
+
 const io=new IntersectionObserver(entries=>entries.forEach(e=>{
   if(e.isIntersecting){
     e.target.classList.add('visible');
