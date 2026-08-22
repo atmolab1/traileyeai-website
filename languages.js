@@ -7,6 +7,11 @@
   let lang=params.get('lang')||localStorage.getItem('traileye-lang')||browserLang;
   if(!supported.includes(lang)) lang='en';
   localStorage.setItem('traileye-lang',lang);
+  if(params.has('lang')){
+    params.delete('lang');
+    const query=params.toString();
+    history.replaceState(null,'',location.pathname+(query?`?${query}`:'')+location.hash);
+  }
   if(lang==='de' && location.pathname==='/' && !location.pathname.startsWith('/de/')){
     location.replace('/de/');
     return;

@@ -118,6 +118,19 @@ class SiteSEOTests(unittest.TestCase):
         self.assertIsNotNone(match, "Product overview CTA is missing")
         self.assertEqual("../#features", match.group(1))
 
+    def test_german_english_links_select_english(self) -> None:
+        offenders: list[str] = []
+        for path in (ROOT / "de").rglob("index.html"):
+            text = path.read_text(encoding="utf-8")
+            match = re.search(r'<a\b[^>]*href="([^"]+)"[^>]*lang="en"[^>]*>English</a>', text)
+            if not match or "lang=en" not in match.group(1):
+                offenders.append(str(path.relative_to(ROOT)))
+        self.assertEqual([], offenders)
+        for script_name, params_name in (("languages.js", "params"), ("subpage-languages.js", "q")):
+            language_script = (ROOT / script_name).read_text(encoding="utf-8")
+            self.assertIn(f"{params_name}.delete('lang')", language_script)
+            self.assertIn("history.replaceState", language_script)
+
     def test_download_pages_are_complete_and_use_release_asset(self) -> None:
         for relative, lang in [("download/index.html", "en"), ("de/download/index.html", "de")]:
             text, parser = parse(relative)

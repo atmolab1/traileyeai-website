@@ -6,6 +6,11 @@ const q=new URLSearchParams(location.search);
 let lang=q.get('lang')||localStorage.getItem('traileye-lang')||'en';
 if(!supported.includes(lang))lang='en';
 localStorage.setItem('traileye-lang',lang);
+if(q.has('lang')){
+ q.delete('lang');
+ const query=q.toString();
+ history.replaceState(null,'',location.pathname+(query?`?${query}`:'')+location.hash);
+}
 document.documentElement.lang=lang==='zh'?'zh-CN':lang;
 
 const path=location.pathname;
