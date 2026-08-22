@@ -107,6 +107,17 @@ class SiteSEOTests(unittest.TestCase):
                     broken.append(f"{path.relative_to(ROOT)} -> {href}")
         self.assertEqual([], broken)
 
+    def test_offline_product_overview_cta_reaches_homepage_features(self) -> None:
+        path = ROOT / "offline-trail-camera-software" / "index.html"
+        text = path.read_text(encoding="utf-8")
+        match = re.search(
+            r'<a\b[^>]*href="([^"]+)"[^>]*>\s*Read the product overview\s*</a>',
+            text,
+            re.IGNORECASE,
+        )
+        self.assertIsNotNone(match, "Product overview CTA is missing")
+        self.assertEqual("../#features", match.group(1))
+
     def test_download_pages_are_complete_and_use_release_asset(self) -> None:
         for relative, lang in [("download/index.html", "en"), ("de/download/index.html", "de")]:
             text, parser = parse(relative)
