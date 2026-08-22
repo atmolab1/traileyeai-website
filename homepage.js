@@ -1,11 +1,11 @@
 const toggle=document.querySelector('[data-menu-toggle]');
 const nav=document.querySelector('[data-nav]');
 
-document.title='AI Trail Camera Software & Wildlife Photo Sorter | TrailEye AI';
+document.title='Trail Camera Software for Windows | TrailEye AI';
 const metaDescription=document.querySelector('meta[name="description"]');
-if(metaDescription)metaDescription.content='TrailEye AI is Windows trail camera software for AI photo and video sorting, wildlife species detection, people and vehicle detection, activity heatmaps, camera-site maps and optional cloud AI searches.';
-const ogTitle=document.querySelector('meta[property="og:title"]');if(ogTitle)ogTitle.content='AI Trail Camera Software & Wildlife Photo Sorter | TrailEye AI';
-const ogDescription=document.querySelector('meta[property="og:description"]');if(ogDescription)ogDescription.content='Analyze trail-camera photos and videos with local AI, species recognition, filtered activity heatmaps, camera maps and optional cloud AI searches.';
+if(metaDescription)metaDescription.content='Analyze and organize trail-camera photos and videos locally on Windows with reviewable AI suggestions, timelines, heatmaps, maps and reports.';
+const ogTitle=document.querySelector('meta[property="og:title"]');if(ogTitle)ogTitle.content='Trail Camera Software for Windows | TrailEye AI';
+const ogDescription=document.querySelector('meta[property="og:description"]');if(ogDescription)ogDescription.content='Analyze and organize trail-camera photos and videos locally on Windows with reviewable AI suggestions, timelines, heatmaps, maps and reports.';
 
 if(toggle&&nav){
   const huntersLink=nav.querySelector('a[href="trail-camera-software-for-hunters/"]');if(huntersLink)huntersLink.remove();
@@ -56,7 +56,6 @@ languageScript.onload=()=>{
   const headlines={de:'Verwandle Wildkamera-Ordner in <span>verwertbare Wildtierdaten.</span>',sl:'Spremenite mape lovskih kamer v <span>uporabne podatke o živalih.</span>',es:'Convierte carpetas de cámaras trampa en <span>información útil sobre fauna.</span>',ru:'Превратите папки фотоловушек в <span>полезные данные о дикой природе.</span>',zh:'将野外相机文件夹转化为<span>可用的野生动物信息。</span>'};
   if(h1&&headlines[lang])h1.innerHTML=headlines[lang];
   const extra=document.createElement('script');extra.src='languages-extra.js?v=1';
-  extra.onload=()=>{const countScript=document.createElement('script');countScript.src='species-count.js?v=1';document.body.appendChild(countScript)};
   document.body.appendChild(extra);
 };
 document.body.appendChild(languageScript);

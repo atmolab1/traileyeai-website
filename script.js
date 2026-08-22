@@ -163,11 +163,6 @@
     const languageScript = document.createElement('script');
     languageScript.src = '/subpage-languages.js?v=2';
     languageScript.defer = true;
-    languageScript.onload = () => {
-      const countScript = document.createElement('script');
-      countScript.src = '/species-count.js?v=1';
-      document.body.appendChild(countScript);
-    };
     document.body.appendChild(languageScript);
   }
 })();
