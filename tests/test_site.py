@@ -260,6 +260,27 @@ class SiteSEOTests(unittest.TestCase):
         self.assertTrue(caption_text.startswith("WEBVTT"))
         self.assertGreaterEqual(len(re.findall(r"\d{2}:\d{2}\.\d{3} --> \d{2}:\d{2}\.\d{3}", caption_text)), 8)
 
+    def test_homepage_uses_current_heatmap_and_analysis_screenshots(self) -> None:
+        text = (ROOT / "index.html").read_text(encoding="utf-8")
+        analysis_name = "assets/traileye-activity-analysis.png"
+        heatmap_name = "assets/traileye-map-heatmap.webp"
+        self.assertIn(
+            f'<img src="{analysis_name}" width="868" height="996" loading="lazy" decoding="async" alt="TrailEye wildlife activity analysis with detections by category, hour, day and moonlight">',
+            text,
+        )
+        self.assertIn(
+            f'<img src="{heatmap_name}" width="620" height="580" loading="lazy" decoding="async" alt="TrailEye camera-site heatmap showing wildlife activity by location">',
+            text,
+        )
+        self.assertNotIn('src="assets/03-activity-insights.png"', text)
+        self.assertNotIn('src="assets/04-camera-site-map.png"', text)
+        analysis = ROOT / analysis_name
+        heatmap = ROOT / heatmap_name
+        self.assertTrue(analysis.is_file())
+        self.assertTrue(heatmap.is_file())
+        self.assertGreater(analysis.stat().st_size, 20_000)
+        self.assertGreater(heatmap.stat().st_size, 100_000)
+
 
 if __name__ == "__main__":
     unittest.main()
