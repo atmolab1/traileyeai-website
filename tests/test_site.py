@@ -229,6 +229,37 @@ class SiteSEOTests(unittest.TestCase):
         self.assertEqual([], broken)
         self.assertEqual([], json_errors)
 
+    def test_homepage_promo_video_is_user_controlled_and_local(self) -> None:
+        text = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn('id="promo-video"', text)
+        match = re.search(r'<video\b([^>]*)>(.*?)</video>', text, re.IGNORECASE | re.DOTALL)
+        self.assertIsNotNone(match, "Homepage promo video is missing")
+        attributes, content = match.groups()
+        self.assertIn("controls", attributes)
+        self.assertIn("playsinline", attributes)
+        self.assertIn('preload="metadata"', attributes)
+        self.assertNotIn("autoplay", attributes)
+        self.assertIn('poster="assets/traileye-ai-promo-poster.webp"', attributes)
+        self.assertIn('src="assets/traileye-ai-promo-en-720p.mp4"', content)
+        self.assertIn('kind="captions"', content)
+        self.assertIn('src="assets/traileye-ai-promo-en.vtt"', content)
+        self.assertIn('srclang="en"', content)
+        self.assertIn('label="English"', content)
+        self.assertRegex(content, r'<track\b[^>]*\bdefault(?:\s|>)')
+        self.assertIn("About 90 seconds", text)
+        self.assertIn("English narration · 1:32", text)
+        video = ROOT / "assets" / "traileye-ai-promo-en-720p.mp4"
+        poster = ROOT / "assets" / "traileye-ai-promo-poster.webp"
+        captions = ROOT / "assets" / "traileye-ai-promo-en.vtt"
+        self.assertTrue(video.is_file())
+        self.assertTrue(poster.is_file())
+        self.assertTrue(captions.is_file())
+        self.assertGreater(video.stat().st_size, 1_000_000)
+        self.assertGreater(poster.stat().st_size, 10_000)
+        caption_text = captions.read_text(encoding="utf-8")
+        self.assertTrue(caption_text.startswith("WEBVTT"))
+        self.assertGreaterEqual(len(re.findall(r"\d{2}:\d{2}\.\d{3} --> \d{2}:\d{2}\.\d{3}", caption_text)), 8)
+
 
 if __name__ == "__main__":
     unittest.main()
