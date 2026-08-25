@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import re
+import struct
 import unittest
 from html.parser import HTMLParser
 from pathlib import Path
@@ -263,23 +264,29 @@ class SiteSEOTests(unittest.TestCase):
     def test_homepage_uses_current_heatmap_and_analysis_screenshots(self) -> None:
         text = (ROOT / "index.html").read_text(encoding="utf-8")
         analysis_name = "assets/traileye-activity-analysis.png"
-        heatmap_name = "assets/traileye-map-heatmap.webp"
+        heatmap_name = "assets/traileye-map-heatmap.png"
         self.assertIn(
             f'<img src="{analysis_name}" width="868" height="996" loading="lazy" decoding="async" alt="TrailEye wildlife activity analysis with detections by category, hour, day and moonlight">',
             text,
         )
         self.assertIn(
-            f'<img src="{heatmap_name}" width="1210" height="720" loading="lazy" decoding="async" alt="TrailEye camera-site heatmap showing wildlife activity by location">',
+            f'<img src="{heatmap_name}" width="1223" height="804" loading="lazy" decoding="async" alt="TrailEye camera-site heatmap showing wildlife activity by location">',
             text,
         )
         self.assertNotIn('src="assets/03-activity-insights.png"', text)
         self.assertNotIn('src="assets/04-camera-site-map.png"', text)
+        self.assertNotIn('src="assets/traileye-map-heatmap.webp"', text)
         analysis = ROOT / analysis_name
         heatmap = ROOT / heatmap_name
         self.assertTrue(analysis.is_file())
         self.assertTrue(heatmap.is_file())
         self.assertGreater(analysis.stat().st_size, 20_000)
         self.assertGreater(heatmap.stat().st_size, 100_000)
+        css = (ROOT / "homepage.css").read_text(encoding="utf-8")
+        self.assertIn(".shot img{width:100%;height:auto;object-fit:contain", css)
+        png_header = heatmap.read_bytes()[:24]
+        self.assertEqual(b"\x89PNG\r\n\x1a\n", png_header[:8])
+        self.assertEqual((1223, 804), struct.unpack(">II", png_header[16:24]))
 
 
 if __name__ == "__main__":
