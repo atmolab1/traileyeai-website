@@ -269,7 +269,7 @@ class SiteSEOTests(unittest.TestCase):
             text,
         )
         self.assertIn(
-            f'<img src="{heatmap_name}" width="620" height="580" loading="lazy" decoding="async" alt="TrailEye camera-site heatmap showing wildlife activity by location">',
+            f'<img src="{heatmap_name}" width="1210" height="720" loading="lazy" decoding="async" alt="TrailEye camera-site heatmap showing wildlife activity by location">',
             text,
         )
         self.assertNotIn('src="assets/03-activity-insights.png"', text)
