@@ -247,7 +247,7 @@ class SiteSEOTests(unittest.TestCase):
         self.assertIn('srclang="en"', content)
         self.assertIn('label="English"', content)
         self.assertRegex(content, r'<track\b[^>]*\bdefault(?:\s|>)')
-        self.assertIn("About 90 seconds", text)
+        self.assertIn('<span class="kicker">Product videos</span>', text)
         self.assertIn("English narration · 1:32", text)
         video = ROOT / "assets" / "traileye-ai-promo-en-720p.mp4"
         poster = ROOT / "assets" / "traileye-ai-promo-poster.webp"
@@ -260,6 +260,37 @@ class SiteSEOTests(unittest.TestCase):
         caption_text = captions.read_text(encoding="utf-8")
         self.assertTrue(caption_text.startswith("WEBVTT"))
         self.assertGreaterEqual(len(re.findall(r"\d{2}:\d{2}\.\d{3} --> \d{2}:\d{2}\.\d{3}", caption_text)), 8)
+
+    def test_homepage_best_of_video_is_accessible_and_user_controlled(self) -> None:
+        text = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertIn('class="promo-video-grid"', text)
+        self.assertIn("Best of TrailEye", text)
+        videos = re.findall(r'<video\b([^>]*)>(.*?)</video>', text, re.IGNORECASE | re.DOTALL)
+        self.assertEqual(2, len(videos))
+        best_of = next((item for item in videos if "traileye-ai-best-of-en-720p.mp4" in item[1]), None)
+        self.assertIsNotNone(best_of, "Best of TrailEye video is missing")
+        attributes, content = best_of
+        self.assertIn("controls", attributes)
+        self.assertIn("playsinline", attributes)
+        self.assertIn('preload="metadata"', attributes)
+        self.assertNotIn("autoplay", attributes)
+        self.assertIn('poster="assets/traileye-ai-best-of-poster.webp"', attributes)
+        self.assertIn('kind="captions"', content)
+        self.assertIn('src="assets/traileye-ai-best-of-en.vtt"', content)
+        self.assertIn('srclang="en"', content)
+        self.assertRegex(content, r'<track\b[^>]*\bdefault(?:\s|>)')
+        self.assertIn("English female narration · 1:54", text)
+        video = ROOT / "assets" / "traileye-ai-best-of-en-720p.mp4"
+        poster = ROOT / "assets" / "traileye-ai-best-of-poster.webp"
+        captions = ROOT / "assets" / "traileye-ai-best-of-en.vtt"
+        self.assertTrue(video.is_file())
+        self.assertTrue(poster.is_file())
+        self.assertTrue(captions.is_file())
+        self.assertGreater(video.stat().st_size, 1_000_000)
+        self.assertGreater(poster.stat().st_size, 10_000)
+        caption_text = captions.read_text(encoding="utf-8")
+        self.assertTrue(caption_text.startswith("WEBVTT"))
+        self.assertGreaterEqual(len(re.findall(r"\d{2}:\d{2}\.\d{3} --> \d{2}:\d{2}\.\d{3}", caption_text)), 10)
 
     def test_homepage_uses_current_heatmap_and_analysis_screenshots(self) -> None:
         text = (ROOT / "index.html").read_text(encoding="utf-8")
