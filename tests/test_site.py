@@ -230,43 +230,25 @@ class SiteSEOTests(unittest.TestCase):
         self.assertEqual([], broken)
         self.assertEqual([], json_errors)
 
-    def test_homepage_promo_video_is_user_controlled_and_local(self) -> None:
+    def test_retired_cinematic_video_is_removed(self) -> None:
         text = (ROOT / "index.html").read_text(encoding="utf-8")
-        self.assertIn('id="promo-video"', text)
-        match = re.search(r'<video\b([^>]*)>(.*?)</video>', text, re.IGNORECASE | re.DOTALL)
-        self.assertIsNotNone(match, "Homepage promo video is missing")
-        attributes, content = match.groups()
-        self.assertIn("controls", attributes)
-        self.assertIn("playsinline", attributes)
-        self.assertIn('preload="metadata"', attributes)
-        self.assertNotIn("autoplay", attributes)
-        self.assertIn('poster="assets/traileye-ai-promo-poster.webp"', attributes)
-        self.assertIn('src="assets/traileye-ai-promo-en-720p.mp4"', content)
-        self.assertIn('kind="captions"', content)
-        self.assertIn('src="assets/traileye-ai-promo-en.vtt"', content)
-        self.assertIn('srclang="en"', content)
-        self.assertIn('label="English"', content)
-        self.assertRegex(content, r'<track\b[^>]*\bdefault(?:\s|>)')
-        self.assertIn('<span class="kicker">Product videos</span>', text)
-        self.assertIn("English narration · 1:32", text)
-        video = ROOT / "assets" / "traileye-ai-promo-en-720p.mp4"
-        poster = ROOT / "assets" / "traileye-ai-promo-poster.webp"
-        captions = ROOT / "assets" / "traileye-ai-promo-en.vtt"
-        self.assertTrue(video.is_file())
-        self.assertTrue(poster.is_file())
-        self.assertTrue(captions.is_file())
-        self.assertGreater(video.stat().st_size, 1_000_000)
-        self.assertGreater(poster.stat().st_size, 10_000)
-        caption_text = captions.read_text(encoding="utf-8")
-        self.assertTrue(caption_text.startswith("WEBVTT"))
-        self.assertGreaterEqual(len(re.findall(r"\d{2}:\d{2}\.\d{3} --> \d{2}:\d{2}\.\d{3}", caption_text)), 8)
+        retired_assets = (
+            "traileye-ai-promo-en-720p.mp4",
+            "traileye-ai-promo-en.vtt",
+            "traileye-ai-promo-poster.webp",
+        )
+        for name in retired_assets:
+            self.assertNotIn(name, text)
+            self.assertFalse((ROOT / "assets" / name).exists(), name)
+        self.assertEqual(1, len(re.findall(r"<video\b", text, re.IGNORECASE)))
 
     def test_homepage_best_of_video_is_accessible_and_user_controlled(self) -> None:
         text = (ROOT / "index.html").read_text(encoding="utf-8")
-        self.assertIn('class="promo-video-grid"', text)
+        self.assertIn('class="promo-video-grid promo-video-single"', text)
+        self.assertIn('<span class="kicker">Product video</span>', text)
         self.assertIn("Best of TrailEye", text)
         videos = re.findall(r'<video\b([^>]*)>(.*?)</video>', text, re.IGNORECASE | re.DOTALL)
-        self.assertEqual(2, len(videos))
+        self.assertEqual(1, len(videos))
         best_of = next((item for item in videos if "traileye-ai-best-of-en-720p.mp4" in item[1]), None)
         self.assertIsNotNone(best_of, "Best of TrailEye video is missing")
         attributes, content = best_of
