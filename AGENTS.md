@@ -25,3 +25,6 @@ Keep installer version, URL and checksum tied to the actual published release.
 See DEPLOYMENT.md for outstanding release coordination. Do not publish a new
 installer version or checksum merely because the application source changed.
 Before broad exploration, query graphify-out/graph.json if available.
+
+Automatic people/vehicle detection and cloud prompt search are Professional-only.
+Free and Explorer detect animals only. Pricing descriptions must state this scope.

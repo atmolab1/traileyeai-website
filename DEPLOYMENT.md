@@ -12,3 +12,10 @@
 - [ ] Update the product video using the application project's website/video handoff.
 
 Publishing: update main, then verify the public site and its translated pricing.
+
+## Animal-only Explorer update
+
+- Free and Explorer: automatic animal detection only; no cloud prompt search.
+- Pro: animals, people, vehicles and cloud search with the customer's own API key.
+- Pricing cards state detection scope directly below the price, in all six languages.
+- Existing installer still needs replacing separately; no installer built in this update.
