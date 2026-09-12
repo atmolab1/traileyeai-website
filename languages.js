@@ -4,7 +4,8 @@
   const browser=(navigator.language||'en').toLowerCase();
   const browserLang=browser.startsWith('de')?'de':browser.startsWith('sl')?'sl':browser.startsWith('es')?'es':browser.startsWith('ru')?'ru':browser.startsWith('zh')?'zh':'en';
   const params=new URLSearchParams(location.search);
-  let lang=params.get('lang')||localStorage.getItem('traileye-lang')||browserLang;
+  const germanHomepage=/^\/de\/(?:index\.html)?$/.test(location.pathname);
+  let lang=params.get('lang')||(germanHomepage?'de':localStorage.getItem('traileye-lang')||browserLang);
   if(!supported.includes(lang)) lang='en';
   localStorage.setItem('traileye-lang',lang);
   if(params.has('lang')){
@@ -13,7 +14,7 @@
     history.replaceState(null,'',location.pathname+(query?`?${query}`:'')+location.hash);
   }
   if(lang==='de' && location.pathname==='/' && !location.pathname.startsWith('/de/')){
-    location.replace('/de/');
+    location.replace('/de/'+location.search+location.hash);
     return;
   }
   document.documentElement.lang=lang==='zh'?'zh-CN':lang;
@@ -103,7 +104,7 @@
         location.href='/de/';
         return;
       }
-      const u=new URL(location.href);u.searchParams.set('lang',select.value);location.href=u.toString();
+      const u=new URL(location.href);if(germanHomepage)u.pathname='/';u.searchParams.set('lang',select.value);location.href=u.toString();
     });
     wrap.appendChild(select);
     const cta=nav.querySelector('.nav-cta');

@@ -11,7 +11,10 @@ JSON-LD offers. `homepage.js` modifies the homepage at runtime, then loads
 `languages.js` and `languages-extra.js`. The latter translates pricing strings.
 English workflow pages use `script.js`, `subpage-languages.js` and
 `subpage-fulltext.js`; the last script replaces whole paragraphs and edition lists.
-German routes under `de/` are separate static pages. Update all affected layers;
+`de/index.html` is generated from the canonical homepage and the German translation
+maps: run `node tools/generate-de-homepage.cjs` after changing homepage markup or German
+copy. It shares the exact CSS, media and scripts; do not redesign it separately.
+Other German routes under `de/` are separate static pages. Update all affected layers;
 editing the homepage alone leaves stale limits in translated text and SEO pages.
 
 Approved offer: Free 100 photos/run, DeepFaune 38 classes, one folder, no video;
@@ -28,3 +31,8 @@ Before broad exploration, query graphify-out/graph.json if available.
 
 Automatic people/vehicle detection and cloud prompt search are Professional-only.
 Free and Explorer detect animals only. Pricing descriptions must state this scope.
+
+The /de/ homepage selects German ahead of stored/browser language. Switching to
+another language returns to / with ?lang=.... Shared scripts/assets must use root
+paths so they also work on /de/. homepage.js loads dictionaries after dynamic content.
+
