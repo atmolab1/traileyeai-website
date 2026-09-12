@@ -55,7 +55,7 @@ languageScript.onload=()=>{
   const h1=document.querySelector('.hero-content h1');
   const headlines={de:'Verwandle Wildkamera-Ordner in <span>verwertbare Wildtierdaten.</span>',sl:'Spremenite mape lovskih kamer v <span>uporabne podatke o živalih.</span>',es:'Convierte carpetas de cámaras trampa en <span>información útil sobre fauna.</span>',ru:'Превратите папки фотоловушек в <span>полезные данные о дикой природе.</span>',zh:'将野外相机文件夹转化为<span>可用的野生动物信息。</span>'};
   if(h1&&headlines[lang])h1.innerHTML=headlines[lang];
-  const extra=document.createElement('script');extra.src='languages-extra.js?v=pro-detection-2';
+  const extra=document.createElement('script');extra.src='languages-extra.js?v=pro-detection-3';
   document.body.appendChild(extra);
 };
 document.body.appendChild(languageScript);
