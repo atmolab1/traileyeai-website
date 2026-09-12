@@ -161,7 +161,7 @@
   ];
   if (multilingualPaths.some((part) => location.pathname.includes(part))) {
     const languageScript = document.createElement('script');
-    languageScript.src = '/subpage-languages.js?v=2';
+    languageScript.src = '/subpage-languages.js?v=offer-29-89';
     languageScript.defer = true;
     document.body.appendChild(languageScript);
   }
