@@ -1,11 +1,11 @@
-TrailEye AI v1.0.0 — Windows installer checksum
+TrailEye AI v1.0.1 — Windows installer checksum
 
-File: TrailEyeAI-Setup-1.0.0.exe
-Size: 1737008941 bytes
-SHA-256: 78277868D46D80FA86BE411403D3DB744F2F7849B0E182F1DF2E1031A8348EFC
+File: TrailEyeAI-Setup-1.0.1.exe
+Size: 1912505444 bytes
+SHA-256: 8D9684DE3D3C732F7E04AA019602101736D9008FD3BD9622688DFB9407D55C2E
 
 Verify on Windows PowerShell:
-Get-FileHash .\TrailEyeAI-Setup-1.0.0.exe -Algorithm SHA256
+Get-FileHash .\TrailEyeAI-Setup-1.0.1.exe -Algorithm SHA256
 
 Verify with Git Bash:
-sha256sum ./TrailEyeAI-Setup-1.0.0.exe
+sha256sum ./TrailEyeAI-Setup-1.0.1.exe

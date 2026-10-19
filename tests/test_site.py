@@ -136,9 +136,9 @@ class SiteSEOTests(unittest.TestCase):
         for relative, lang in [("download/index.html", "en"), ("de/download/index.html", "de")]:
             text, parser = parse(relative)
             self.assertIn('lang="' + lang + '"', text)
-            self.assertIn("TrailEyeAI-Setup-1.0.0.exe", text)
-            self.assertIn("1,737,008,941", text)
-            self.assertIn("78277868d46d80fa86be411403d3db744f2f7849b0e182f1df2e1031a8348efc", text.lower())
+            self.assertIn("TrailEyeAI-Setup-1.0.1.exe", text)
+            self.assertIn("1,912,505,444", text)
+            self.assertIn("8d9684de3d3c732f7e04aa019602101736d9008fd3bd9622688dfb9407d55c2e", text.lower())
             self.assertRegex(text.lower(), r"system requirements|systemvoraussetzungen")
             self.assertRegex(text.lower(), r"windows smartscreen|smartscreen")
             self.assertTrue(parser.title.strip())
